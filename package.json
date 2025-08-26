@@ -1,0 +1,20 @@
+{
+	"name": "@grinwiz/errors",
+	"version": "1.0.0",
+	"main": "lib/index.js",
+	"keywords": [
+		"utils",
+		"error"
+	],
+	"author": "SUJWN",
+	"license": "MIT",
+	"description": "",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/grinwiz/errors.git"
+	},
+	"bugs": {
+		"url": "https://github.com/grinwiz/errors/issues"
+	},
+	"homepage": "https://github.com/grinwiz/errors#readme"
+}
