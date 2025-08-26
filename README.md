@@ -10,7 +10,7 @@ Supports standard HTTP errors, a base `BaseError` class, and fully **custom erro
 - Standard HTTP errors: `BadRequestError`, `NotFoundError`, `UnauthorizedError`, etc.  
 - Base `BaseError` for custom extensions.  
 - `CustomError` for dynamic or one-off errors with any `statusCode` and `errorCode`.  
-- Supports `details` metadata for debugging or logging.  
+- Supports `data` metadata for debugging or logging.  
 - Fully compatible with Express, Fastify, or any Node.js backend.
 
 ---
@@ -48,7 +48,7 @@ Output:
   statusCode: 404,
   errorCode: "NOT_FOUND",
   message: "User not found",
-  details: { userId: 123 }
+  data: { userId: 123 }
 }
 ```
 ---
@@ -63,7 +63,7 @@ Output:
   statusCode: 402,
   errorCode: "PAYMENT_REQUIRED",
   message: "Payment required",
-  details: { plan: "premium" }
+  data: { plan: "premium" }
 }
 ```
 ---
@@ -87,8 +87,8 @@ You can extend `BaseError` to create your own reusable error classes:
 const { BaseError } = require('@grinwiz/errors');
 
 class MyCustomError extends BaseError {
-  constructor(message, details = {}) {
-    super(message, { statusCode: 418, errorCode: "I_AM_A_TEAPOT", details });
+  constructor(message, data = {}) {
+    super(message, { statusCode: 418, errorCode: "I_AM_A_TEAPOT", data });
   }
 }
 
